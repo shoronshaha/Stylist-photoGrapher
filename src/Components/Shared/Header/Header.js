@@ -12,10 +12,10 @@ const Header = () => {
             </div>
             <div className='flex font-black gap-2 text-[16px]'>
                 <CustomLink to='/'>HOME</CustomLink>
-                <CustomLink to='/reviews'>REVIEWS</CustomLink>
                 <CustomLink to='/dashboard'>CHECKOUT</CustomLink>
                 <CustomLink to='/blogs'>BLOGS</CustomLink>
                 <CustomLink to='/about'>ABOUT</CustomLink>
+                <CustomLink to='/login'>LOGIN</CustomLink>
             </div>
         </div>
     );

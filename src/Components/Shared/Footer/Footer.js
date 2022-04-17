@@ -82,7 +82,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className='text-center text-white font-bold pt-10 sm:pt-12 flex items-center justify-center'>
-                    All Rights Reserved By &copy; FireArms | 2022-2023
+                    All Rights Reserved By &copy; Stylist Photographer | 2022-2023
                 </div>
             </div>
         </footer>

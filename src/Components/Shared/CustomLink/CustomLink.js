@@ -6,7 +6,7 @@ const CustomLink = ({ children, to, ...props }) => {
     let match = useMatch({ path: resolved.pathname, end: true })
     return (
         <div>
-            <Link style={{ color: match ? '#4FFBDF' : 'white' }} to={to} {...props}>
+            <Link style={{ color: match ? 'orange' : 'white' }} to={to} {...props}>
                 {children}
             </Link>
         </div>
