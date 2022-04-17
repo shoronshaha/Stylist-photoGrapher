@@ -1,45 +1,47 @@
 [
     {
         "id": 1,
-        "title": "BirthDay Photography ",
+        "title": "Birthday Photography ",
         "price": "1000",
-        "hireMe":"",
+        "hireMe":"I am professional photographer. you need to more details to click below checkout button ",
         "description": {
-            "workTime":"",
-            "light":"",
-            "clickPhoto":"",
-            "retouch":"",
-            "print":""
+            "workTime":"4 Hours shoot",
+            "light":"Portrait Light Setup",
+            "clickPhoto":"Unlimited (All Post Processed)",
+            "retouch":"100 Special Edited Photos By Our Own Panel All Edited Photos Delivered In DVD",
+            "print":"4R (4x6): 100 Copies & 12L (12X18): 1 Copy",
+            "video":"Full HD 1080p (1920X1080) With Blu-Ray Disc"
         },
-        "img": ""
+        "img": "https://i.ibb.co/hgJMQBc/birthday-2.jpg"
     },
     {
         "id": 2,
         "title": "Wedding Photography",
         "price": "15000",
-        "hireMe":"",
+        "hireMe":"I am professional photographer. you need to more details to click below checkout button",
         "description": {
-            "workTime":"",
-            "light":"",
-            "clickPhoto":"",
-            "retouch":"",
-            "print":""
-
+            "workTime":"6 Hours shoot",
+            "light":"Portrait Light Setup",
+            "clickPhoto":"Unlimited (All Post Processed)",
+            "retouch":"100 Special Edited Photos By Our Own Panel All Edited Photos Delivered In DVD",
+            "print":"4R (4x6): 100 Copies & 12L (12X18): 1 Copy",
+            "video":"Full HD 1080p (1920X1080) With Blu-Ray Disc"
         },
-        "img": ""
+        "img": "https://i.ibb.co/P96wTTV/wedding.jpg"
     },
     {
         "id": 3,
         "title": "Tour Photography",
         "price": "2500",
-        "hireMe":"",
+        "hireMe":"I am professional photographer. you need to more details to click below checkout button",
         "description": {
-            "workTime":"",
-            "light":"",
-            "clickPhoto":"",
-            "retouch":"",
-            "print":""
+            "workTime":"1 day",
+            "light":"Portrait Light Setup",
+            "clickPhoto":"Unlimited (All Post Processed)",
+            "retouch":"100 Special Edited Photos By Our Own Panel All Edited Photos Delivered In DVD",
+            "print":"4R (4x6): 100 Copies & 12L (12X18): 1 Copy",
+            "video":"Full HD 1080p (1920X1080) With Blu-Ray Disc"
         },
-        "img": ""
+        "img": "https://i.ibb.co/VppQrf8/tour.jpg"
     }
 ]
