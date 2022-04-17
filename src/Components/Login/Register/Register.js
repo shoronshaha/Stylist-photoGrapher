@@ -6,6 +6,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../Firebase/Firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import Loading from '../../Shared/Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Register = () => {
     const [
@@ -23,8 +28,8 @@ const Register = () => {
         navigate('/login');
     }
 
-    if (user) {
-        console.log('user', user);
+    if (loading || updating) {
+        return <Loading></Loading>
     }
 
     const handleRegister = async (event) => {
@@ -36,7 +41,7 @@ const Register = () => {
 
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
-        console.log('Updated profile');
+        toast('Updated profile');
         navigate('/home');
     }
 
@@ -73,6 +78,7 @@ const Register = () => {
                 </p>
                 <div>
                     <SocialLogin></SocialLogin>
+                    <ToastContainer />
                 </div>
             </form>
 
