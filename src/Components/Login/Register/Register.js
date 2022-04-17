@@ -5,7 +5,7 @@ import password from '../../../Images/icons/password.png';
 import { Link, useNavigate } from 'react-router-dom';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import auth from '../../../Firebase/Firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const Register = () => {
     const [
@@ -13,7 +13,8 @@ const Register = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
 
     const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Register = () => {
         navigate('/home')
     }
 
-    const handleRegister = event => {
+    const handleRegister = (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
@@ -41,7 +42,7 @@ const Register = () => {
     return (
         <div>
             <form onSubmit={handleRegister} className="justify-center items-center w-full shadow rounded-lg bg-white px-6 flex flex-col md:w-1/2 lg:w-1/3 m-auto">
-                <h2 className="text-2xl my-4">Register</h2>
+                <h2 className="text-3xl my-4 font-bold">REGISTER</h2>
                 <div className="w-full p-2 justify-start flex flex-col">
                     <div className=" my-4 flex flex-row">
                         <span className="z-highest rounded-l-lg w-10 h-10 flex justify-center items-center text-2xl text-gray-400 border border-r-0" mode="render" block="">

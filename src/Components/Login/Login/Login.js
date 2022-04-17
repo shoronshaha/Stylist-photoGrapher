@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 import mail from '../../../Images/icons/mail.png'
@@ -23,6 +23,8 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
     if (user) {
         navigate(from, { replace: true });
     }
@@ -44,10 +46,16 @@ const Login = () => {
         navigate("/register");
     }
 
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
+
     return (
         <div>
             <form onSubmit={handleSubmit} className="justify-center items-center w-full shadow rounded-lg bg-white px-6 flex flex-col md:w-1/2 lg:w-1/3 m-auto">
-                <h2 className="text-2xl my-4">Login</h2>
+                <h2 className="text-3xl my-4 font-bold ">LOGIN</h2>
                 <div className="w-full p-2 justify-start flex flex-col">
                     <div className=" flex flex-row">
                         <span className="z-highest rounded-l-lg w-10 h-10 flex justify-center items-center text-2xl text-gray-400 border border-r-0" mode="render" block="">
@@ -71,7 +79,7 @@ const Login = () => {
                 </p>
 
 
-                <p>Forget Password? <Link to="/register" className=' text-red-500 no-underline mx-2'>Reset Password</Link></p>
+                <p>Forget Password? <button onClick={resetPassword} className=' text-red-500 no-underline mx-2'>Reset Password</button></p>
 
                 <div>
                     <SocialLogin></SocialLogin>
