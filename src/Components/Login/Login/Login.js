@@ -1,6 +1,8 @@
 import React from 'react';
 import { useRef } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../Firebase/Firebase.init';
 import mail from '../../../Images/icons/mail.png'
 import password from '../../../Images/icons/password.png'
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -9,17 +11,31 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    const location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (user) {
+        navigate(from, { replace: true });
+    }
 
     const handleSubmit = event => {
         event.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
 
-        console.log(email, password);
+        signInWithEmailAndPassword(email, password);
     }
 
     const navigateRegister = event => {
-        Navigate("/register");
+        navigate("/register");
     }
 
     return (
