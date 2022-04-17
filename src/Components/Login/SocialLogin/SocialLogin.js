@@ -1,22 +1,22 @@
 import React from 'react';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../Firebase/Firebase.init';
 
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGithub, user1, loading1, error1] = useSignInWithGithub(auth);
     const navigate = useNavigate();
 
     let errorElement;
 
-    if (error) {
-        errorElement = <div>
-            <p className='text-red-600'>Error: {error.message}</p>
-        </div>
+    if (error || error1) {
+        errorElement = <p className='text-red-600'>Error: {error?.message} {error1?.message}</p>
+
     }
 
 
-    if (user) {
+    if (user || user1) {
         navigate('/home');
     }
 
@@ -30,7 +30,7 @@ const SocialLogin = () => {
             {errorElement}
             <div>
                 <button value="button" onClick={() => signInWithGoogle()} className="px-4 py-2 rounded-full bg-green-500 text-white hover:bg-green-700 my-4 w-full" > Google Sign In</button>
-                <button value="button" className="px-4 py-2 rounded-full bg-indigo-400 text-white hover:bg-indigo-700 my-4 w-full" > Github Sign In</button>
+                <button value="button" onClick={() => signInWithGithub()} className="px-4 py-2 rounded-full bg-indigo-400 text-white hover:bg-indigo-700 my-4 w-full" > Github Sign In</button>
                 <button value="button" className="px-4 py-2 rounded-full bg-blue-400 text-white hover:bg-blue-700 my-4 w-full "> Facebook Sign In</button>
             </div>
         </div>

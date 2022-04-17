@@ -15,6 +15,7 @@ const Login = () => {
 
     let from = location.state?.from?.pathname || "/";
 
+    let errorElement;
     const [
         signInWithEmailAndPassword,
         user,
@@ -24,6 +25,11 @@ const Login = () => {
 
     if (user) {
         navigate(from, { replace: true });
+    }
+
+    if (error) {
+        errorElement = <p className='text-red-600'>Error: {error?.message}</p>
+
     }
 
     const handleSubmit = event => {
@@ -56,13 +62,16 @@ const Login = () => {
                         </span>
                         <input className="h-10 border border-gray-200 rounded-r-lg outline-none focus:ring-1 ring-blue-300 w-full pl-1" id="" ref={passwordRef} required type="password" name="password" placeholder="password" />
                     </div>
+                    {errorElement}
                     <button value="button" className="px-4 py-2 rounded bg-orange-400 text-white hover:bg-orange-600 my-4 w-full" id="whoobe-ibemp">Login</button>
                 </div>
                 <p>New to Stylist Photographer?
                     <Link to="/register" className=' text-blue-500 no-underline mx-2 cursor-pointer' onClick={navigateRegister}>Please Register</Link>
 
                 </p>
-                <p>Forget Password? <Link to="/register" className=' text-blue-500 no-underline mx-2'>Please Register</Link> </p>
+
+
+                <p>Forget Password? <Link to="/register" className=' text-red-500 no-underline mx-2'>Reset Password</Link></p>
 
                 <div>
                     <SocialLogin></SocialLogin>
