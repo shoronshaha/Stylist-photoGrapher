@@ -1,0 +1,12 @@
+.containers {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centers {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  transform: translate(-5%, -40%);
+}
