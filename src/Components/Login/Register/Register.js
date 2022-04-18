@@ -38,7 +38,6 @@ const Register = () => {
         const email = event.target.email.value;
         const password = event.target.password.value;
 
-
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
         toast('Updated profile');
