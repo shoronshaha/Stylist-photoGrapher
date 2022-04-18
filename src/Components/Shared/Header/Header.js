@@ -21,12 +21,11 @@ const Header = () => {
             </div>
             <div className='flex font-black gap-2 text-[16px]'>
                 <CustomLink to='/'>HOME</CustomLink>
-                <CustomLink to='/checkout'>CHECKOUT</CustomLink>
                 <CustomLink to='/blogs'>BLOGS</CustomLink>
                 <CustomLink to='/about'>ABOUT</CustomLink>
                 {
                     user ?
-                        <button className='text-white px-2 rounded bg-orange-400 hover:bg-orange-600' onClick={handleSignOut}>Sign-Out</button>
+                        <CustomLink to='/login' className='text-white px-2 rounded text-orange-400 hover:text-orange-600' onClick={handleSignOut}>SIGN-OUT</CustomLink>
                         :
                         <CustomLink to='/login'>LOGIN</CustomLink>
                 }
