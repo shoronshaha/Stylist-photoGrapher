@@ -1,8 +1,9 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+# Stylist Photographer
+## [Live site link]()
+[]()
+## Project Description
+* Here I have created a website about FireArms Reviews.
+* Used tailwind css for font-end styling.
+* Here I have used CustomHooks and CustomLinks.
+* Ratings are shown using react-rating.
 
