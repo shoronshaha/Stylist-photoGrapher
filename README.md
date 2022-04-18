@@ -12,5 +12,7 @@
 * use react-firebase-hook. 
 * react route.
 * firebase for authentication.
-* also use  react-Toastify. 
+* also use react-Toastify. 
+* Custom Link.
+* Fontawsome for icon.
 

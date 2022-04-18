@@ -16,16 +16,16 @@ const NotFound = () => {
                         You might have the wrong address, or the page may have moved.
                     </p>
                     <Link
-                        to='/'
+                        to='/home'
                         className='w-full mb-2 py-2 px-3 text-white font-bold mt-3 bg-purple-500 sm:w-auto sm:mb-0'
                     >
                         Back to homepage
                     </Link>
                     <Link
-                        to='/dashboard'
+                        to='/about'
                         className='w-full mb-2 py-2 px-3 text-white font-bold mt-3 mx-2 bg-purple-500 sm:w-auto sm:mb-0'
                     >
-                        Dashboard
+                        About
                     </Link>
                 </div>
                 <div>
