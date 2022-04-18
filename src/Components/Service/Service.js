@@ -30,7 +30,7 @@ const Service = ({ service }) => {
                             <p className='px-2'>Description</p>
                             <div style={{ height: "2px" }} className='bg-blue-700 w-[100px] mt-3'></div>
                         </div>
-                        <div className='text-left text-[1vw] my-2'>
+                        <div className='text-left my-2'>
                             <p><span className='font-bold'>Work Time:</span>{workTime}</p>
                             <p><span className='font-bold'>Light: </span>{light}</p>
                             <p><span className='font-bold'>ClickPhoto:</span> {clickPhoto}</p>
